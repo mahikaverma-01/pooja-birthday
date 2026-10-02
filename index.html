@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Pooja 🎀💗</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Georgia", serif;
+            background:
+                radial-gradient(circle at 10% 20%, #ffe4ec 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, #f8dce8 0%, transparent 25%),
+                #fff8f5;
+            color: #633d4c;
+            overflow-x: hidden;
+        }
+
+        /* FLOATING EMOJIS */
+
+        .emoji {
+            position: fixed;
+            font-size: 25px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .e1 { top: 8%; left: 5%; }
+        .e2 { top: 18%; right: 7%; animation-delay: 1s; }
+        .e3 { top: 45%; left: 3%; animation-delay: 2s; }
+        .e4 { top: 65%; right: 4%; animation-delay: 3s; }
+        .e5 { bottom: 10%; left: 10%; animation-delay: 1.5s; }
+        .e6 { bottom: 20%; right: 12%; animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+        }
+
+        /* MAIN CARD */
+
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 92%;
+            max-width: 1050px;
+            margin: 50px auto;
+            padding: 45px;
+            background: rgba(255,255,255,0.82);
+            border: 2px solid #e8b8c8;
+            border-radius: 35px;
+            box-shadow:
+                0 20px 50px rgba(128, 65, 91, 0.18),
+                inset 0 0 0 8px #fff7f5,
+                inset 0 0 0 10px #f3ccd9;
+        }
+
+        /* TOP DECORATION */
+
+        .top {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .small {
+            font-size: 20px;
+            letter-spacing: 5px;
+            color: #b66c86;
+        }
+
+        h1 {
+            margin-top: 12px;
+            font-size: clamp(42px, 7vw, 78px);
+            color: #b44f73;
+            font-weight: normal;
+            text-shadow: 2px 3px #f5d3df;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 21px;
+            color: #80606d;
+            font-style: italic;
+        }
+
+        .divider {
+            margin: 28px auto;
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #c97894;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            height: 1px;
+            background: #ddb0bf;
+            flex: 1;
+        }
+
+        /* BIRTHDAY MESSAGE */
+
+        .message {
+            max-width: 820px;
+            margin: auto;
+            text-align: center;
+            padding: 30px;
+            background: #fff5f7;
+            border: 1px dashed #d99aae;
+            border-radius: 25px;
+        }
+
+        .message h2 {
+            color: #a9476a;
+            font-size: 31px;
+            margin-bottom: 18px;
+        }
+
+        .message p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #654653;
+        }
+
+        .highlight {
+            color: #b44770;
+            font-weight: bold;
+        }
+
+        /* PHOTO SECTION */
+
+        .photo-title {
+            text-align: center;
+            margin: 45px 0 25px;
+            color: #a94c6d;
+            font-size: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .photo {
+            position: relative;
+            padding: 10px;
+            background: white;
+            border: 2px solid #e4b1c2;
+            box-shadow: 7px 8px 0 #f3d4de;
+            transition: 0.35s;
+        }
+
+        .photo:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .photo:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .photo:hover {
+            transform: rotate(0deg) scale(1.04);
+            box-shadow: 10px 12px 0 #e8bdcd;
+            z-index: 5;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #f0cbd7;
+        }
+
+        .caption {
+            text-align: center;
+            padding: 12px 5px 7px;
+            font-size: 17px;
+            color: #805363;
+            font-style: italic;
+        }
+
+        /* SPECIAL QUOTE */
+
+        .quote {
+            margin: 45px auto 25px;
+            max-width: 750px;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #d9a7b8;
+            border-bottom: 1px solid #d9a7b8;
+            font-size: 23px;
+            line-height: 1.6;
+            color: #a34869;
+        }
+
+        /* FINAL WISH */
+
+        .final {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .final h2 {
+            color: #a94368;
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .final p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-size: 22px;
+            color: #a74c6c;
+            font-style: italic;
+        }
+
+        /* HEARTS */
+
+        .hearts {
+            margin-top: 30px;
+            font-size: 28px;
+            letter-spacing: 8px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .card {
+                padding: 25px;
+                margin: 20px auto;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo img {
+                height: 300px;
+            }
+
+            .message {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING DECORATIONS -->
+
+    <div class="emoji e1">🎀</div>
+    <div class="emoji e2">🦋</div>
+    <div class="emoji e3">🌷</div>
+    <div class="emoji e4">💗</div>
+    <div class="emoji e5">✨</div>
+    <div class="emoji e6">🌸</div>
+
+    <div class="card">
+
+        <!-- HEADER -->
+
+        <div class="top">
+
+            <div class="small">
+                🎀 ✨ 🌷 🦋 ✨ 🎀
+            </div>
+
+            <h1>Happy Birthday<br>Pooja 💗</h1>
+
+            <div class="subtitle">
+                to one of the most special people in my life 🌸
+            </div>
+
+            <div class="divider">
+                ♡ ✧ ♡
+            </div>
+
+        </div>
+
+
+        <!-- BIRTHDAY MESSAGE -->
+
+        <div class="message">
+
+            <h2>🌷 A Little Birthday Note For You 🌷</h2>
+
+            <p>
+                Happy Birthday to you, <span class="highlight">Pooja</span>! 🎂💗
+                Today is all about celebrating the beautiful person you are.
+                I hope your birthday is filled with the kind of happiness,
+                love, laughter and little moments that make your heart feel
+                incredibly full. 🦋✨
+            </p>
+
+            <br>
+
+            <p>
+                You are genuinely such a special person, and I feel so lucky
+                to have you in my life. 🌸 From the random conversations to
+                the silly laughs, the memories we have made and all the little
+                moments in between — every single one means so much to me. 💕
+            </p>
+
+            <br>
+
+            <p>
+                I hope this new year of your life brings you
+                <span class="highlight">
+                    endless happiness, beautiful memories, success,
+                    love, peace and everything your heart wishes for.
+                </span>
+                🌷 May you always have reasons to smile, people who truly
+                appreciate you, and dreams that keep making you excited
+                about tomorrow. ✨
+            </p>
+
+        </div>
+
+
+        <!-- PHOTOS -->
+
+        <h2 class="photo-title">
+            📸 Little Memories With You 🌸
+        </h2>
+
+        <div class="gallery">
+
+            <div class="photo">
+                <img src="photos/pooja1.jpeg" alt="Pooja memory 1">
+                <div class="caption">🌸 precious moment 🌸</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja2.jpeg" alt="Pooja memory 2">
+                <div class="caption">🦋 pretty memories 🦋</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja3.jpeg" alt="Pooja memory 3">
+                <div class="caption">💗 happy moments 💗</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja4.jpeg" alt="Pooja memory 4">
+                <div class="caption">✨ unforgettable ✨</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja5.jpeg" alt="Pooja memory 5">
+                <div class="caption">🌷 forever cute 🌷</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja6.jpeg" alt="Pooja memory 6">
+                <div class="caption">🎀 sweet memories 🎀</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja7.jpeg" alt="Pooja memory 7">
+                <div class="caption">💕 one for the memories 💕</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja8.jpeg" alt="Pooja memory 8">
+                <div class="caption">🌸 beautiful soul 🌸</div>
+            </div>
+
+            <div class="photo">
+                <img src="photos/pooja9.jpeg" alt="Pooja memory 9">
+                <div class="caption">🦋 always special 🦋</div>
+            </div>
+
+        </div>
+
+
+        <!-- QUOTE -->
+
+        <div class="quote">
+            “Some people make ordinary moments feel like
+            the sweetest memories.” 🌷💗✨
+        </div>
+
+
+        <!-- FINAL WISH -->
+
+        <div class="final">
+
+            <h2>🎂 Happiest Birthday, Pooja! 🎂</h2>
+
+            <p>
+                May your smile always stay this beautiful. 💕
+                May your life be filled with adventures, success,
+                laughter, love and countless reasons to be happy. 🌸
+                Keep being the wonderful person you are. 🦋
+            </p>
+
+            <div class="hearts">
+                💗 🎀 🌷 ✨ 🦋 💕 🌸 ✨ 🎀 💗
+            </div>
+
+            <div class="signature">
+                With lots and lots of love 💕<br>
+                Always wishing the best for you 🌷
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
